@@ -1,0 +1,21 @@
+body {
+  font: 20px/1.5 'Ubuntu', sans-serif;
+  color: #2b542c;
+  background: none;
+  text-align: center;
+  margin: 0;
+}
+
+
+
+table {
+  width: 100%;
+}
+
+html {
+  background: url(../img/2016-09-11-10-00.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
