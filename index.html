@@ -18,20 +18,24 @@
 
     <noscript><h1>Please activate JavaScript.</h1></noscript>
 
-    <h1 id="title"></h1>
-    <p id="date"></p>
-    <p id="stats"></p>
-
     <div class="row">
         <div class="col-md-4">
             <div id="thermometer" class="gauge center-block"></div>
             <div id="hygrometer" class="gauge center-block"></div>
         </div>
         <div class="col-md-4">
+            <h1 id="title"></h1>
+            <p id="date"></p>
+
             <a id="picLink" href="">
                 <img id="pic" src="" width="320"/>
             </a>
-            <pre>Last update: <span id="lastUpdate"></span></pre>
+            <p class="lastUpdate">Last update: <span id="lastUpdate"></span><br />
+            Temp: <span id="temp"></span> °C
+            Humid: <span id="humid"></span> %<br />
+            Press: <span id="press"></span> hPa
+            Light: <span id="light"></span> lx
+            </p>
         </div>
         <div class="col-md-4">
             <div id="pressuremeter" class="gauge center-block"></div>
@@ -42,10 +46,6 @@
     <hr />
     <iframe width="450" height="260" style="border: 0;"
             src="https://thingspeak.com/channels/154597/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line&yaxis=%C2%B0C"></iframe>
-    <p>Temp: <span id="temp"></span> °C</p>
-    <p>Humid: <span id="humid"></span> %</p>
-    <p>Press: <span id="press"></span> mBar</p>
-    <p>Light: <span id="light"></span> lx</p>
 
     <hr />
 

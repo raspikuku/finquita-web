@@ -20,7 +20,7 @@ html {
   background-size: cover;
 }
 
-.gaugex  {
-  float: left;
-  margin: 10px 10px;
+p.lastUpdate {
+  font-family: monospace;
+  font-size: 0.5em;
 }
