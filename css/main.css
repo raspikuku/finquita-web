@@ -19,3 +19,8 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.gaugex  {
+  float: left;
+  margin: 10px 10px;
+}

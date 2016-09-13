@@ -24,62 +24,43 @@
 
     <div class="row">
         <div class="col-md-4">
-            <p>Temp: <span id="temp"></span> °C</p>
-            <p>Humid: <span id="humid"></span> %</p>
+            <div id="thermometer" class="gauge center-block"></div>
+            <div id="hygrometer" class="gauge center-block"></div>
         </div>
         <div class="col-md-4">
             <a id="picLink" href="">
                 <img id="pic" src="" width="320"/>
             </a>
+            <pre>Last update: <span id="lastUpdate"></span></pre>
         </div>
         <div class="col-md-4">
-            <p>Press: <span id="press"></span> mBar</p>
-            <p>Light: <span id="light"></span> lx</p>
+            <div id="pressuremeter" class="gauge center-block"></div>
+            <div id="lightmeter" class="gauge center-block"></div>
         </div>
     </div>
-
-    <p>Last update: <span id="lastUpdate"></span></p>
 
     <hr />
     <iframe width="450" height="260" style="border: 0;"
             src="https://thingspeak.com/channels/154597/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line&yaxis=%C2%B0C"></iframe>
-
-    <iframe width="150" height="150" style="border: 0;" src="https://thingspeak.com/apps/plugins/91763"></iframe>
+    <p>Temp: <span id="temp"></span> °C</p>
+    <p>Humid: <span id="humid"></span> %</p>
+    <p>Press: <span id="press"></span> mBar</p>
+    <p>Light: <span id="light"></span> lx</p>
 
     <hr />
 
     <footer>
-        <p>Developed by <a href="https://github.com/elkuku" target="_blank">elkuku</a></p>
+        <p>Developed by <a href="https://github.com/raspikuku">raspikuku</a></p>
     </footer>
+
 </div> <!-- /container -->
 
 
 <script src="js/jquery-3.1.0.min.js"></script>
-
-<script>
-    function update() {
-
-        $('#date').html(new Date().toLocaleString());
-
-        $.get('https://api.thingspeak.com/channels/154597/feeds.json?results=1', function (data) {
-            var entry = data.feeds[0];
-
-            $('#title').html(data.channel.name);
-            $('#lastUpdate').html(data.channel.updated_at);
-            $('#temp').html(entry.field1);
-            $('#humid').html(entry.field2);
-            $('#press').html(entry.field3);
-            $('#light').html(entry.field4);
-        });
-
-        $.get('https://gist.githubusercontent.com/raspikuku/51f792d4e3d07b21ad182e9ee178e9fb/raw', function (data) {
-            $('#pic').attr('src', data + '&dl=1');
-            $('#picLink').attr('href', data);
-        });
-    }
-    update();
-    setInterval(update, 10000);
-</script>
+<script src="js/raphael.min.js"></script>
+<script src="js/jquery.sonic-gauge.min.js"></script>
+<script src="js/gauges.js"></script>
+<script src="js/finquita.js"></script>
 
 </body>
 </html>
