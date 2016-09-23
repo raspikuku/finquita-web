@@ -135,7 +135,7 @@ var Pressuremeter = $('#pressuremeter').SonicGauge ({
         {
             gap: 10,
             line: {"width": 10, "stroke": "none", "fill": "#eeeeee"},
-            text: {"space": 22, "text-anchor": "middle", "fill": "#333333", "font-size": 16}
+            text: {"space": 22, "text-anchor": "middle", "fill": "#333333", "font-size": 14}
         }
     ],
     style	: {
@@ -166,9 +166,12 @@ var Lightmeter = $('#lightmeter').SonicGauge ({
     digital_toFixed	: 1,
     markers	: [
         {
-            gap: 200,
+            gap: 250,
             line: {"width": 10, "stroke": "none", "fill": "#eeeeee"},
-            text: {"space": 22, "text-anchor": "middle", "fill": "#333333", "font-size": 16}
+            text: {"space": 22, "text-anchor": "middle", "fill": "#333333", "font-size": 14}
+        },{
+            gap: 100,
+            line: {"width": 5, "stroke": "none", "fill": "#000000"},
         }
     ],
     style	: {
